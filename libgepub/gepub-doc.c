@@ -125,6 +125,9 @@ gepub_doc_new (const gchar *path)
 
     len = strlen (file);
     while (file[i++] != '/' && i < len);
+    if(i == len)
+        i = 0;
+        
     doc->content_base = g_strndup (file, i);
 
     // doc resources hashtable:
